@@ -13,15 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let homeViewController = HRHomeViewController()
-    let navigationController = UINavigationController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = self.window {
-            self.navigationController.setViewControllers([self.homeViewController], animated: false)
-            window.rootViewController = self.navigationController
+            window.rootViewController = self.homeViewController
             window.makeKeyAndVisible()
         }
         
