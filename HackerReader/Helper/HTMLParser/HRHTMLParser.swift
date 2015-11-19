@@ -10,7 +10,22 @@ import UIKit
 import Fuzi
 
 class HRHTMLParser: NSObject {
-    func parseHackerNewsForFeeds(html: String) -> NSArray {
+    
+    class func hackerNewsParser() -> HRHTMLParser {
+        return HRHTMLHackerNewsParser()
+    }
+    
+    class func rubyChinaParser() -> HRHTMLParser {
+        return HRHTMLRubyChinaParser()
+    }
+    
+    func parseForFeeds(html: String) -> NSArray {
+        preconditionFailure("This method must be overridden")
+    }
+}
+
+class HRHTMLHackerNewsParser : HRHTMLParser {
+    override func parseForFeeds(html: String) -> NSArray {
         let array = NSMutableArray()
         do {
             let doc = try HTMLDocument(string: html)
@@ -21,15 +36,17 @@ class HRHTMLParser: NSObject {
                 feed.urlString = item["href"]
                 array.addObject(feed)
             }
-        
+            
         } catch let error {
             print(error)
         }
         
         return array.copy() as! NSArray
     }
-    
-    func parseRubyChinaForFeeds(html: String) -> NSArray {
+}
+
+class HRHTMLRubyChinaParser : HRHTMLParser {
+    override func parseForFeeds(html: String) -> NSArray {
         let array = NSMutableArray()
         do {
             let doc = try HTMLDocument(string: html)

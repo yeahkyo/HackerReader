@@ -40,7 +40,7 @@ class HRHomeViewController: UIViewController {
     private func loadData() {
         let fetcher : HRFeedFetcher = HRFeedFetcher()
         
-        fetcher.newest(.RubyChina) { [weak self](feedArray) -> Void in
+        fetcher.newest(.HackerNews) { [weak self](feedArray) -> Void in
             if let wself = self {
                 wself.feedArray.removeAllObjects()
                 wself.feedArray.addObjectsFromArray(feedArray as [AnyObject])
