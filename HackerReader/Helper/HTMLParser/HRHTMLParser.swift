@@ -34,10 +34,13 @@ class HRHTMLParser: NSObject {
         do {
             let doc = try HTMLDocument(string: html)
             
-            for item in doc.css("div.topic .infos .title > a") {
+            for item in doc.css("div.topic") {
+                let info = item.css(".infos .title > a").first
+                let avatar = item.css(".avatar img").first
                 let feed = HRFeedModel()
-                feed.title = item.stringValue
-                feed.urlString = "https://ruby-china.org" + item["href"]!
+                feed.title = info!.stringValue
+                feed.urlString = "https://ruby-china.org" + info!["href"]!
+                feed.imageURLString = avatar!["src"]!
                 array.addObject(feed)
             }
             

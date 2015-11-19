@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HRHomeViewController: UIViewController {
 
@@ -68,8 +69,11 @@ extension HRHomeViewController: UITableViewDataSource {
             cell?.textLabel?.font = UIFont.systemFontOfSize(12.0)
         }
 
-        let feed = self.feedArray[indexPath.row]
+        let feed : HRFeedModel = self.feedArray[indexPath.row] as! HRFeedModel
         cell?.textLabel?.text = feed.title
+        if feed.imageURLString != nil {
+            cell?.imageView?.sd_setImageWithURL(NSURL(string: feed.imageURLString), placeholderImage: UIImage(named: "DefaultImage"))
+        }
 
         return cell!
     }

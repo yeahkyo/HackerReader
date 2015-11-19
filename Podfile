@@ -6,5 +6,6 @@
 target 'HackerReader' do
     pod 'Alamofire', '~> 3.0'
     pod 'Fuzi', '~> 0.2.0'
+    pod 'SDWebImage', '~> 3.7'
 end
 
