@@ -39,6 +39,12 @@ class HRArticleViewController: UIViewController {
         self.webView.loadRequest(NSURLRequest(URL: NSURL(string: "about:blank")!))
         self.webView.loadRequest(NSURLRequest(URL: self.url))
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.webView.stopLoading()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

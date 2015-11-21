@@ -15,19 +15,30 @@ enum HRFeedSitesAvailable : Int {
 }
 
 class HRFeedFetcher: NSObject {
+
+    func feedsForSite(site: HRFeedSitesAvailable, success: (NSArray) -> Void) {
+        self.feedsForSite(site, page: 1, success: success)
+    }
     
-    func newest(site: HRFeedSitesAvailable, success: (NSArray) -> Void) {
+    func feedsForSite(site: HRFeedSitesAvailable, page: Int, success: (NSArray) -> Void) {
         var url : String
         var parser : HRHTMLParser
+        var pageParameter = ""
         if site == .HackerNews {
             url = "https://news.ycombinator.com/news"
             parser = HRHTMLParser.hackerNewsParser()
+            pageParameter = "p"
         } else if site == .RubyChina {
             url = "https://ruby-china.org/topics"
             parser = HRHTMLParser.rubyChinaParser()
+            pageParameter = "page"
         } else {
             url = "about:blank"
             parser = HRHTMLParser()
+        }
+        
+        if page > 1 {
+            url = url + "?" + pageParameter + "=" + String(page)
         }
         
         Alamofire.request(.GET, url)
@@ -41,4 +52,6 @@ class HRFeedFetcher: NSObject {
                 }
             })
     }
+
+    
 }

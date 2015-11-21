@@ -9,19 +9,24 @@
 import UIKit
 import Fuzi
 
-class HRHTMLParser: NSObject {
+protocol HRHTMLParserProtocol {
+    func parseForFeeds(html: String) -> NSArray
+}
+
+class HRHTMLParser: NSObject, HRHTMLParserProtocol {
     
-    class func hackerNewsParser() -> HRHTMLParser {
+    static func hackerNewsParser() -> HRHTMLParser {
         return HRHTMLHackerNewsParser()
     }
     
-    class func rubyChinaParser() -> HRHTMLParser {
+    static func rubyChinaParser() -> HRHTMLParser {
         return HRHTMLRubyChinaParser()
     }
     
     func parseForFeeds(html: String) -> NSArray {
         preconditionFailure("This method must be overridden")
     }
+    
 }
 
 class HRHTMLHackerNewsParser : HRHTMLParser {

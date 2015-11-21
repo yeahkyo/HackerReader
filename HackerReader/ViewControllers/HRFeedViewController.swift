@@ -16,6 +16,9 @@ class HRFeedViewController: UIViewController {
     
     var feedSource : HRFeedSitesAvailable
     
+    private var isLoading = false
+    private var page = 1
+    
     required init(feedSource: HRFeedSitesAvailable) {
         self.feedSource = feedSource
         super.init(nibName: nil, bundle: nil)
@@ -49,7 +52,7 @@ class HRFeedViewController: UIViewController {
     private func loadData() {
         let fetcher : HRFeedFetcher = HRFeedFetcher()
         
-        fetcher.newest(feedSource) { [weak self](feedArray) -> Void in
+        fetcher.feedsForSite(feedSource) { [weak self](feedArray) -> Void in
             if let wself = self {
                 wself.feedArray.removeAllObjects()
                 wself.feedArray.addObjectsFromArray(feedArray as [AnyObject])
@@ -59,7 +62,22 @@ class HRFeedViewController: UIViewController {
                 })
             }
         }
+    }
+    
+    private func loadNextPage() {
+        let fetcher : HRFeedFetcher = HRFeedFetcher()
+        self.isLoading = true
         
+        fetcher.feedsForSite(feedSource, page: ++self.page) { [weak self](feedArray) -> Void in
+            if let wself = self {
+                wself.feedArray.addObjectsFromArray(feedArray as [AnyObject])
+                wself.isLoading = false
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self?.tableView.reloadData()
+                })
+            }
+        }
     }
 }
 
@@ -85,6 +103,10 @@ extension HRFeedViewController: UITableViewDataSource {
             cell?.imageView?.sd_setImageWithURL(NSURL(string: feed.imageURLString), placeholderImage: UIImage(named: "DefaultImage"))
         }
         
+        if (!self.isLoading && indexPath.row >= self.feedArray.count - 2) {
+            self.loadNextPage();
+        }
+        
         return cell!
     }
     
@@ -104,5 +126,9 @@ extension HRFeedViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(self.articleViewController, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+
+}
+
+extension HRFeedViewController: UIScrollViewDelegate {
     
 }
