@@ -9,22 +9,26 @@
 import UIKit
 import SDWebImage
 
-class HRHomeViewController: UITabBarController {
+class HRHomeViewController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
+        self.navigationBar.tintColor = UIColor.blackColor()
         
-        let hackerNewsNavigationController = UINavigationController()
-        hackerNewsNavigationController.viewControllers = [HRFeedViewController(feedSource: HRFeedSitesAvailable.HackerNews)]
-        hackerNewsNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 0)
+        let tabBarController = UITabBarController()
+        tabBarController.title = "Hacker Reader"
+        let backBarItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        tabBarController.navigationItem.backBarButtonItem = backBarItem
         
-        let rubyChinaNavigationController = UINavigationController()
-        rubyChinaNavigationController.viewControllers = [HRFeedViewController(feedSource: HRFeedSitesAvailable.RubyChina)]
-        rubyChinaNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .History, tag: 1)
-
-        self.viewControllers = [hackerNewsNavigationController, rubyChinaNavigationController]
+        let hackerNewsViewController = HRFeedViewController(feedSource: HRSitesAvailable.HackerNews)
+        hackerNewsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 0)
+        let rubyChinaViewController = HRFeedViewController(feedSource: HRSitesAvailable.RubyChina)
+        rubyChinaViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .History, tag: 1)
+        tabBarController.viewControllers = [hackerNewsViewController, rubyChinaViewController]
+        
+        self.viewControllers = [tabBarController]
     }
     
     override func viewWillAppear(animated: Bool) {

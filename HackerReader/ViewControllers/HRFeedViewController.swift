@@ -8,18 +8,17 @@
 
 import UIKit
 
-class HRFeedViewController: UIViewController {
+class HRFeedViewController: UITableViewController {
 
-    var tableView : UITableView!
     var feedArray : NSMutableArray = NSMutableArray()
-    var articleViewController : HRArticleViewController = HRArticleViewController()
+    var articleViewController : HRArticleViewController!
     
-    var feedSource : HRFeedSitesAvailable
+    var feedSource : HRSitesAvailable
     
     private var isLoading = false
     private var page = 1
     
-    required init(feedSource: HRFeedSitesAvailable) {
+    required init(feedSource: HRSitesAvailable) {
         self.feedSource = feedSource
         super.init(nibName: nil, bundle: nil)
     }
@@ -30,32 +29,40 @@ class HRFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if feedSource == HRFeedSitesAvailable.HackerNews {
+        
+        if feedSource == HRSitesAvailable.HackerNews {
             self.title = "HN"
-        } else if feedSource == HRFeedSitesAvailable.RubyChina {
+        } else if feedSource == HRSitesAvailable.RubyChina {
             self.title = "RubyChina"
         }
-
-        self.tableView = UITableView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.view.addSubview(self.tableView)
+        
+        self.articleViewController = HRArticleViewController.articleViewControllerFor(self.feedSource)
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.backgroundColor = UIColor.whiteColor()
+        self.refreshControl!.tintColor = UIColor.orangeColor()
+        self.refreshControl?.addTarget(self, action: Selector("refreshData"), forControlEvents: UIControlEvents.ValueChanged)
 
         self.loadData()
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @objc private func refreshData() {
+        self.loadData()
+    }
+    
     private func loadData() {
-        let fetcher : HRFeedFetcher = HRFeedFetcher()
+        let fetcher : HRContentFetcher = HRContentFetcher()
         
         fetcher.feedsForSite(feedSource) { [weak self](feedArray) -> Void in
             if let wself = self {
                 wself.feedArray.removeAllObjects()
                 wself.feedArray.addObjectsFromArray(feedArray as [AnyObject])
+                wself.refreshControl?.endRefreshing()
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self?.tableView.reloadData()
@@ -65,7 +72,7 @@ class HRFeedViewController: UIViewController {
     }
     
     private func loadNextPage() {
-        let fetcher : HRFeedFetcher = HRFeedFetcher()
+        let fetcher : HRContentFetcher = HRContentFetcher()
         self.isLoading = true
         
         fetcher.feedsForSite(feedSource, page: ++self.page) { [weak self](feedArray) -> Void in
@@ -82,13 +89,13 @@ class HRFeedViewController: UIViewController {
 }
 
 
-extension HRFeedViewController: UITableViewDataSource {
+extension HRFeedViewController {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.feedArray.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("HomeCell")
         if (cell == nil) {
             cell = UITableViewCell()
@@ -110,25 +117,23 @@ extension HRFeedViewController: UITableViewDataSource {
         return cell!
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50;
     }
     
 }
 
-extension HRFeedViewController: UITableViewDelegate {
+extension HRFeedViewController {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let feed : HRFeedModel! = self.feedArray[indexPath.row] as! HRFeedModel
-        self.articleViewController.title = feed.title as String
+        
+        self.articleViewController.sourceSite = self.feedSource
+        self.articleViewController.title = self.title
         self.articleViewController.url = NSURL(string: feed.urlString as String)
         
         self.navigationController?.pushViewController(self.articleViewController, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
-}
-
-extension HRFeedViewController: UIScrollViewDelegate {
-    
 }

@@ -9,18 +9,18 @@
 import UIKit
 import Alamofire
 
-enum HRFeedSitesAvailable : Int {
+enum HRSitesAvailable : Int {
     case HackerNews = 1
     case RubyChina = 2
 }
 
-class HRFeedFetcher: NSObject {
+class HRContentFetcher: NSObject {
 
-    func feedsForSite(site: HRFeedSitesAvailable, success: (NSArray) -> Void) {
+    func feedsForSite(site: HRSitesAvailable, success: (NSArray) -> Void) {
         self.feedsForSite(site, page: 1, success: success)
     }
     
-    func feedsForSite(site: HRFeedSitesAvailable, page: Int, success: (NSArray) -> Void) {
+    func feedsForSite(site: HRSitesAvailable, page: Int, success: (NSArray) -> Void) {
         var url : String
         var parser : HRHTMLParser
         var pageParameter = ""
@@ -52,6 +52,29 @@ class HRFeedFetcher: NSObject {
                 }
             })
     }
-
     
+    // Temp here
+    func articleForSite(site: HRSitesAvailable, url: NSURL, success: (HRArticleModel) -> Void) {
+        let parser : HRHTMLParser
+        if site == .RubyChina {
+            parser = HRHTMLParser.rubyChinaParser()
+        } else {
+            parser = HRHTMLParser()
+        }
+        
+        Alamofire.request(.GET, url)
+            .response { (request, response, data, error) -> Void in
+                if let validData = data {
+                    let html  = String(data: validData, encoding: NSUTF8StringEncoding)
+                    let article = parser.parseForArticle(html!)
+                    
+                    success(article)
+                }
+        }
+    }
 }
+
+
+
+
+

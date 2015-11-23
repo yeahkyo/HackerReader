@@ -27,6 +27,9 @@ class HRHTMLParser: NSObject, HRHTMLParserProtocol {
         preconditionFailure("This method must be overridden")
     }
     
+    func parseForArticle(html: String) -> HRArticleModel {
+        preconditionFailure("This method must be overridden")
+    }
 }
 
 class HRHTMLHackerNewsParser : HRHTMLParser {
@@ -71,5 +74,23 @@ class HRHTMLRubyChinaParser : HRHTMLParser {
         }
         
         return array.copy() as! NSArray
+    }
+    
+    override  func parseForArticle(html: String) -> HRArticleModel {
+        let article = HRArticleModel()
+        
+        do {
+            let doc = try HTMLDocument(string: html)
+            
+            article.content = doc.css("article").first?.rawXML
+            article.title = doc.css("h1").first?.stringValue
+//            article.authorName = doc.css("div.media-body div.info a[data-author]").firs?.stringValue
+            article.authorName = doc.css("div.media-body div.info a")[1]!.stringValue
+            
+        } catch let error {
+            print(error)
+        }
+        
+        return article
     }
 }

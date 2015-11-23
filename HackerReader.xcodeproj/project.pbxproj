@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		47651CD11BFDAE5E00AAA91A /* HRHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD01BFDAE5E00AAA91A /* HRHTMLParser.swift */; };
-		47651CD31BFDAE7200AAA91A /* HRFeedFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD21BFDAE7200AAA91A /* HRFeedFetcher.swift */; };
+		47651CD31BFDAE7200AAA91A /* HRContentFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD21BFDAE7200AAA91A /* HRContentFetcher.swift */; };
 		47651CD61BFDB0DD00AAA91A /* HRFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */; };
 		47651CDA1BFDC20600AAA91A /* HRArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD81BFDC20600AAA91A /* HRArticleViewController.swift */; };
 		47651CDB1BFDC20600AAA91A /* HRHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD91BFDC20600AAA91A /* HRHomeViewController.swift */; };
 		47651CDF1BFDDB1700AAA91A /* ZYScaleTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CDE1BFDDB1700AAA91A /* ZYScaleTabController.swift */; };
 		47651CE11BFDDC3000AAA91A /* HRFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CE01BFDDC3000AAA91A /* HRFeedViewController.swift */; };
+		47651CE31C007D8C00AAA91A /* HRArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CE21C007D8C00AAA91A /* HRArticleModel.swift */; };
+		47651CE51C007EF600AAA91A /* HRWebArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CE41C007EF600AAA91A /* HRWebArticleViewController.swift */; };
+		47651CE71C008DBA00AAA91A /* article.css in Resources */ = {isa = PBXBuildFile; fileRef = 47651CE61C008DBA00AAA91A /* article.css */; };
 		47D8E5D81BFC813D00B41EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8E5D71BFC813D00B41EA4 /* AppDelegate.swift */; };
 		47D8E5DF1BFC813D00B41EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D8E5DE1BFC813D00B41EA4 /* Assets.xcassets */; };
 		47D8E5E21BFC813D00B41EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47D8E5E01BFC813D00B41EA4 /* LaunchScreen.storyboard */; };
@@ -23,12 +26,15 @@
 /* Begin PBXFileReference section */
 		2BC10C4903AB15D3D233EF4B /* Pods-HackerReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerReader/Pods-HackerReader.debug.xcconfig"; sourceTree = "<group>"; };
 		47651CD01BFDAE5E00AAA91A /* HRHTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHTMLParser.swift; path = Helper/HTMLParser/HRHTMLParser.swift; sourceTree = "<group>"; };
-		47651CD21BFDAE7200AAA91A /* HRFeedFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRFeedFetcher.swift; path = Helper/Service/HRFeedFetcher.swift; sourceTree = "<group>"; };
+		47651CD21BFDAE7200AAA91A /* HRContentFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRContentFetcher.swift; path = Helper/Service/HRContentFetcher.swift; sourceTree = "<group>"; };
 		47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRFeedModel.swift; path = Model/HRFeedModel.swift; sourceTree = "<group>"; };
 		47651CD81BFDC20600AAA91A /* HRArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRArticleViewController.swift; path = ViewControllers/HRArticleViewController.swift; sourceTree = "<group>"; };
 		47651CD91BFDC20600AAA91A /* HRHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHomeViewController.swift; path = ViewControllers/HRHomeViewController.swift; sourceTree = "<group>"; };
 		47651CDE1BFDDB1700AAA91A /* ZYScaleTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZYScaleTabController.swift; path = Utility/ZYScaleTabController.swift; sourceTree = "<group>"; };
 		47651CE01BFDDC3000AAA91A /* HRFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRFeedViewController.swift; path = ViewControllers/HRFeedViewController.swift; sourceTree = "<group>"; };
+		47651CE21C007D8C00AAA91A /* HRArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRArticleModel.swift; path = Model/HRArticleModel.swift; sourceTree = "<group>"; };
+		47651CE41C007EF600AAA91A /* HRWebArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRWebArticleViewController.swift; path = ViewControllers/HRWebArticleViewController.swift; sourceTree = "<group>"; };
+		47651CE61C008DBA00AAA91A /* article.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = article.css; path = ViewControllers/article.css; sourceTree = "<group>"; };
 		47D8E5D41BFC813D00B41EA4 /* HackerReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D8E5D71BFC813D00B41EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47D8E5DE1BFC813D00B41EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +76,7 @@
 		47651CCF1BFDAE2E00AAA91A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				47651CD21BFDAE7200AAA91A /* HRFeedFetcher.swift */,
+				47651CD21BFDAE7200AAA91A /* HRContentFetcher.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -79,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */,
+				47651CE21C007D8C00AAA91A /* HRArticleModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -87,8 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				47651CD81BFDC20600AAA91A /* HRArticleViewController.swift */,
+				47651CE41C007EF600AAA91A /* HRWebArticleViewController.swift */,
 				47651CD91BFDC20600AAA91A /* HRHomeViewController.swift */,
 				47651CE01BFDDC3000AAA91A /* HRFeedViewController.swift */,
+				47651CE61C008DBA00AAA91A /* article.css */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -214,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47D8E5E21BFC813D00B41EA4 /* LaunchScreen.storyboard in Resources */,
+				47651CE71C008DBA00AAA91A /* article.css in Resources */,
 				47D8E5DF1BFC813D00B41EA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,10 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47651CD31BFDAE7200AAA91A /* HRFeedFetcher.swift in Sources */,
+				47651CD31BFDAE7200AAA91A /* HRContentFetcher.swift in Sources */,
 				47651CD61BFDB0DD00AAA91A /* HRFeedModel.swift in Sources */,
 				47651CE11BFDDC3000AAA91A /* HRFeedViewController.swift in Sources */,
 				47651CD11BFDAE5E00AAA91A /* HRHTMLParser.swift in Sources */,
+				47651CE51C007EF600AAA91A /* HRWebArticleViewController.swift in Sources */,
+				47651CE31C007D8C00AAA91A /* HRArticleModel.swift in Sources */,
 				47651CDB1BFDC20600AAA91A /* HRHomeViewController.swift in Sources */,
 				47651CDA1BFDC20600AAA91A /* HRArticleViewController.swift in Sources */,
 				47651CDF1BFDDB1700AAA91A /* ZYScaleTabController.swift in Sources */,
