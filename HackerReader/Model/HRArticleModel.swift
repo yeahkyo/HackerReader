@@ -13,5 +13,5 @@ class HRArticleModel: NSObject {
     var authorName : String!
     var content : String!
     
-    // var comments : HRCommentModel
+     var comments : [HRCommentModel]?
 }

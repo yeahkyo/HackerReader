@@ -12,11 +12,13 @@
 		47651CD61BFDB0DD00AAA91A /* HRFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */; };
 		47651CDA1BFDC20600AAA91A /* HRArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD81BFDC20600AAA91A /* HRArticleViewController.swift */; };
 		47651CDB1BFDC20600AAA91A /* HRHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD91BFDC20600AAA91A /* HRHomeViewController.swift */; };
-		47651CDF1BFDDB1700AAA91A /* ZYScaleTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CDE1BFDDB1700AAA91A /* ZYScaleTabController.swift */; };
 		47651CE11BFDDC3000AAA91A /* HRFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CE01BFDDC3000AAA91A /* HRFeedViewController.swift */; };
 		47651CE31C007D8C00AAA91A /* HRArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CE21C007D8C00AAA91A /* HRArticleModel.swift */; };
-		47651CE51C007EF600AAA91A /* HRWebArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CE41C007EF600AAA91A /* HRWebArticleViewController.swift */; };
 		47651CE71C008DBA00AAA91A /* article.css in Resources */ = {isa = PBXBuildFile; fileRef = 47651CE61C008DBA00AAA91A /* article.css */; };
+		47651D0F1C0316EE00AAA91A /* HRCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651D0E1C0316EE00AAA91A /* HRCommentModel.swift */; };
+		47A225FF1C0455950070713E /* HRDefaultArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A225FE1C0455950070713E /* HRDefaultArticleViewController.swift */; };
+		47A226011C0455BD0070713E /* HRWebArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A226001C0455BD0070713E /* HRWebArticleViewController.swift */; };
+		47A226031C0456960070713E /* ZYDateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A226021C0456960070713E /* ZYDateUtility.swift */; };
 		47D8E5D81BFC813D00B41EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8E5D71BFC813D00B41EA4 /* AppDelegate.swift */; };
 		47D8E5DF1BFC813D00B41EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D8E5DE1BFC813D00B41EA4 /* Assets.xcassets */; };
 		47D8E5E21BFC813D00B41EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47D8E5E01BFC813D00B41EA4 /* LaunchScreen.storyboard */; };
@@ -30,11 +32,13 @@
 		47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRFeedModel.swift; path = Model/HRFeedModel.swift; sourceTree = "<group>"; };
 		47651CD81BFDC20600AAA91A /* HRArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRArticleViewController.swift; path = ViewControllers/HRArticleViewController.swift; sourceTree = "<group>"; };
 		47651CD91BFDC20600AAA91A /* HRHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHomeViewController.swift; path = ViewControllers/HRHomeViewController.swift; sourceTree = "<group>"; };
-		47651CDE1BFDDB1700AAA91A /* ZYScaleTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZYScaleTabController.swift; path = Utility/ZYScaleTabController.swift; sourceTree = "<group>"; };
 		47651CE01BFDDC3000AAA91A /* HRFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRFeedViewController.swift; path = ViewControllers/HRFeedViewController.swift; sourceTree = "<group>"; };
 		47651CE21C007D8C00AAA91A /* HRArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRArticleModel.swift; path = Model/HRArticleModel.swift; sourceTree = "<group>"; };
-		47651CE41C007EF600AAA91A /* HRWebArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRWebArticleViewController.swift; path = ViewControllers/HRWebArticleViewController.swift; sourceTree = "<group>"; };
 		47651CE61C008DBA00AAA91A /* article.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = article.css; path = ViewControllers/article.css; sourceTree = "<group>"; };
+		47651D0E1C0316EE00AAA91A /* HRCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRCommentModel.swift; path = Model/HRCommentModel.swift; sourceTree = "<group>"; };
+		47A225FE1C0455950070713E /* HRDefaultArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRDefaultArticleViewController.swift; path = ViewControllers/Article/HRDefaultArticleViewController.swift; sourceTree = "<group>"; };
+		47A226001C0455BD0070713E /* HRWebArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRWebArticleViewController.swift; path = ViewControllers/Article/HRWebArticleViewController.swift; sourceTree = "<group>"; };
+		47A226021C0456960070713E /* ZYDateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZYDateUtility.swift; path = Utility/ZYDateUtility.swift; sourceTree = "<group>"; };
 		47D8E5D41BFC813D00B41EA4 /* HackerReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D8E5D71BFC813D00B41EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47D8E5DE1BFC813D00B41EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 			children = (
 				47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */,
 				47651CE21C007D8C00AAA91A /* HRArticleModel.swift */,
+				47651D0E1C0316EE00AAA91A /* HRCommentModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -93,8 +98,8 @@
 		47651CD71BFDC1D400AAA91A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				47A225FD1C0455670070713E /* Article */,
 				47651CD81BFDC20600AAA91A /* HRArticleViewController.swift */,
-				47651CE41C007EF600AAA91A /* HRWebArticleViewController.swift */,
 				47651CD91BFDC20600AAA91A /* HRHomeViewController.swift */,
 				47651CE01BFDDC3000AAA91A /* HRFeedViewController.swift */,
 				47651CE61C008DBA00AAA91A /* article.css */,
@@ -105,9 +110,18 @@
 		47651CDD1BFDDADC00AAA91A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				47651CDE1BFDDB1700AAA91A /* ZYScaleTabController.swift */,
+				47A226021C0456960070713E /* ZYDateUtility.swift */,
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		47A225FD1C0455670070713E /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				47A226001C0455BD0070713E /* HRWebArticleViewController.swift */,
+				47A225FE1C0455950070713E /* HRDefaultArticleViewController.swift */,
+			);
+			name = Article;
 			sourceTree = "<group>";
 		};
 		47D8E5CB1BFC813D00B41EA4 = {
@@ -287,12 +301,14 @@
 				47651CD61BFDB0DD00AAA91A /* HRFeedModel.swift in Sources */,
 				47651CE11BFDDC3000AAA91A /* HRFeedViewController.swift in Sources */,
 				47651CD11BFDAE5E00AAA91A /* HRHTMLParser.swift in Sources */,
-				47651CE51C007EF600AAA91A /* HRWebArticleViewController.swift in Sources */,
 				47651CE31C007D8C00AAA91A /* HRArticleModel.swift in Sources */,
 				47651CDB1BFDC20600AAA91A /* HRHomeViewController.swift in Sources */,
 				47651CDA1BFDC20600AAA91A /* HRArticleViewController.swift in Sources */,
-				47651CDF1BFDDB1700AAA91A /* ZYScaleTabController.swift in Sources */,
+				47A226031C0456960070713E /* ZYDateUtility.swift in Sources */,
+				47A226011C0455BD0070713E /* HRWebArticleViewController.swift in Sources */,
+				47A225FF1C0455950070713E /* HRDefaultArticleViewController.swift in Sources */,
 				47D8E5D81BFC813D00B41EA4 /* AppDelegate.swift in Sources */,
+				47651D0F1C0316EE00AAA91A /* HRCommentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
