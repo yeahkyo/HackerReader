@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4738BADD1C04663900E6189C /* HRHTMLRubyChinaParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738BADC1C04663900E6189C /* HRHTMLRubyChinaParser.swift */; };
+		4738BADF1C04667100E6189C /* HRHTMLHackerNewsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738BADE1C04667100E6189C /* HRHTMLHackerNewsParser.swift */; };
 		47651CD11BFDAE5E00AAA91A /* HRHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD01BFDAE5E00AAA91A /* HRHTMLParser.swift */; };
 		47651CD31BFDAE7200AAA91A /* HRContentFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD21BFDAE7200AAA91A /* HRContentFetcher.swift */; };
 		47651CD61BFDB0DD00AAA91A /* HRFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */; };
@@ -19,6 +21,8 @@
 		47A225FF1C0455950070713E /* HRDefaultArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A225FE1C0455950070713E /* HRDefaultArticleViewController.swift */; };
 		47A226011C0455BD0070713E /* HRWebArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A226001C0455BD0070713E /* HRWebArticleViewController.swift */; };
 		47A226031C0456960070713E /* ZYDateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A226021C0456960070713E /* ZYDateUtility.swift */; };
+		47A226051C045B470070713E /* default_article.html in Resources */ = {isa = PBXBuildFile; fileRef = 47A226041C045B470070713E /* default_article.html */; };
+		47A226071C045BFA0070713E /* _comment.html in Resources */ = {isa = PBXBuildFile; fileRef = 47A226061C045BFA0070713E /* _comment.html */; };
 		47D8E5D81BFC813D00B41EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8E5D71BFC813D00B41EA4 /* AppDelegate.swift */; };
 		47D8E5DF1BFC813D00B41EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D8E5DE1BFC813D00B41EA4 /* Assets.xcassets */; };
 		47D8E5E21BFC813D00B41EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47D8E5E01BFC813D00B41EA4 /* LaunchScreen.storyboard */; };
@@ -27,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		2BC10C4903AB15D3D233EF4B /* Pods-HackerReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerReader/Pods-HackerReader.debug.xcconfig"; sourceTree = "<group>"; };
+		4738BADC1C04663900E6189C /* HRHTMLRubyChinaParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHTMLRubyChinaParser.swift; path = Helper/HTMLParser/HRHTMLRubyChinaParser.swift; sourceTree = "<group>"; };
+		4738BADE1C04667100E6189C /* HRHTMLHackerNewsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHTMLHackerNewsParser.swift; path = Helper/HTMLParser/HRHTMLHackerNewsParser.swift; sourceTree = "<group>"; };
 		47651CD01BFDAE5E00AAA91A /* HRHTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHTMLParser.swift; path = Helper/HTMLParser/HRHTMLParser.swift; sourceTree = "<group>"; };
 		47651CD21BFDAE7200AAA91A /* HRContentFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRContentFetcher.swift; path = Helper/Service/HRContentFetcher.swift; sourceTree = "<group>"; };
 		47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRFeedModel.swift; path = Model/HRFeedModel.swift; sourceTree = "<group>"; };
@@ -39,6 +45,8 @@
 		47A225FE1C0455950070713E /* HRDefaultArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRDefaultArticleViewController.swift; path = ViewControllers/Article/HRDefaultArticleViewController.swift; sourceTree = "<group>"; };
 		47A226001C0455BD0070713E /* HRWebArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRWebArticleViewController.swift; path = ViewControllers/Article/HRWebArticleViewController.swift; sourceTree = "<group>"; };
 		47A226021C0456960070713E /* ZYDateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZYDateUtility.swift; path = Utility/ZYDateUtility.swift; sourceTree = "<group>"; };
+		47A226041C045B470070713E /* default_article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = default_article.html; path = ViewControllers/Article/default_article.html; sourceTree = "<group>"; };
+		47A226061C045BFA0070713E /* _comment.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = _comment.html; path = ViewControllers/_comment.html; sourceTree = "<group>"; };
 		47D8E5D41BFC813D00B41EA4 /* HackerReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D8E5D71BFC813D00B41EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47D8E5DE1BFC813D00B41EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				47651CD01BFDAE5E00AAA91A /* HRHTMLParser.swift */,
+				4738BADC1C04663900E6189C /* HRHTMLRubyChinaParser.swift */,
+				4738BADE1C04667100E6189C /* HRHTMLHackerNewsParser.swift */,
 			);
 			name = HTMLParser;
 			sourceTree = "<group>";
@@ -102,7 +112,6 @@
 				47651CD81BFDC20600AAA91A /* HRArticleViewController.swift */,
 				47651CD91BFDC20600AAA91A /* HRHomeViewController.swift */,
 				47651CE01BFDDC3000AAA91A /* HRFeedViewController.swift */,
-				47651CE61C008DBA00AAA91A /* article.css */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -120,6 +129,9 @@
 			children = (
 				47A226001C0455BD0070713E /* HRWebArticleViewController.swift */,
 				47A225FE1C0455950070713E /* HRDefaultArticleViewController.swift */,
+				47651CE61C008DBA00AAA91A /* article.css */,
+				47A226041C045B470070713E /* default_article.html */,
+				47A226061C045BFA0070713E /* _comment.html */,
 			);
 			name = Article;
 			sourceTree = "<group>";
@@ -238,7 +250,9 @@
 			files = (
 				47D8E5E21BFC813D00B41EA4 /* LaunchScreen.storyboard in Resources */,
 				47651CE71C008DBA00AAA91A /* article.css in Resources */,
+				47A226071C045BFA0070713E /* _comment.html in Resources */,
 				47D8E5DF1BFC813D00B41EA4 /* Assets.xcassets in Resources */,
+				47A226051C045B470070713E /* default_article.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,12 +313,14 @@
 			files = (
 				47651CD31BFDAE7200AAA91A /* HRContentFetcher.swift in Sources */,
 				47651CD61BFDB0DD00AAA91A /* HRFeedModel.swift in Sources */,
+				4738BADF1C04667100E6189C /* HRHTMLHackerNewsParser.swift in Sources */,
 				47651CE11BFDDC3000AAA91A /* HRFeedViewController.swift in Sources */,
 				47651CD11BFDAE5E00AAA91A /* HRHTMLParser.swift in Sources */,
 				47651CE31C007D8C00AAA91A /* HRArticleModel.swift in Sources */,
 				47651CDB1BFDC20600AAA91A /* HRHomeViewController.swift in Sources */,
 				47651CDA1BFDC20600AAA91A /* HRArticleViewController.swift in Sources */,
 				47A226031C0456960070713E /* ZYDateUtility.swift in Sources */,
+				4738BADD1C04663900E6189C /* HRHTMLRubyChinaParser.swift in Sources */,
 				47A226011C0455BD0070713E /* HRWebArticleViewController.swift in Sources */,
 				47A225FF1C0455950070713E /* HRDefaultArticleViewController.swift in Sources */,
 				47D8E5D81BFC813D00B41EA4 /* AppDelegate.swift in Sources */,

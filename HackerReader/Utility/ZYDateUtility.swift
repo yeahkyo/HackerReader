@@ -32,4 +32,11 @@ extension NSDate {
             return "刚刚"
         }
     }
+    
+    class func dateTimeWithZoneTimeString(timeString: String) -> NSDate {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+        let dateTime = dateFormatter.dateFromString(timeString)
+        return dateTime!
+    }
 }

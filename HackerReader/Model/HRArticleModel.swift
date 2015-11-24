@@ -9,9 +9,10 @@
 import UIKit
 
 class HRArticleModel: NSObject {
-    var title : String!
-    var authorName : String!
-    var content : String!
+    var title: String!
+    var authorName: String!
+    var content: String!
+    var time: NSDate!
     
-     var comments : [HRCommentModel]?
+    var comments: [HRCommentModel]?
 }

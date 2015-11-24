@@ -64,21 +64,26 @@ class HRDefaultArticleViewController : HRArticleViewController {
     }
     
     private func reloadArticle() {
-        let headHtml = "<head><link type='text/css' rel='stylesheet' href='article.css'></head>"
-        
-        let headerTitle = "<h1 class='title'>  \((self.article?.title)!) </h1><div class='author'>"
-        let bodyHeader = "<header> \(headerTitle) \((self.article?.authorName)!) </div></header>"
-        let bodyArticle = "<article> \((self.article?.content)!) </article>"
-        
-        var commentsHtml = ""
-        for comment in (self.article?.comments)! {
-            let commentHtml = "<div class='comment'><div class='avatar'><img src='\(comment.userAvatarURL!)'></div><div class='infos'>\(comment.userName) \(comment.timeAgoText)</div><div class='content'>\(comment.content!)</div></div>"
-            commentsHtml.appendContentsOf(commentHtml)
+        do {
+            let defaultArticlePath = NSBundle.mainBundle().pathForResource("default_article", ofType: "html")
+            var defaultArticle = try String(contentsOfFile: defaultArticlePath!)
+            defaultArticle = defaultArticle.stringByReplacingOccurrencesOfString("[[ title ]]", withString: (self.article?.title)!)
+                .stringByReplacingOccurrencesOfString("[[ authorName ]]", withString: (self.article?.authorName)!)
+                .stringByReplacingOccurrencesOfString("[[ timeText ]]", withString: (self.article?.time.timeAgoString())!)
+                .stringByReplacingOccurrencesOfString("[[ content ]]", withString: (self.article?.content)!)
+            
+            var commentsPartial = ""
+            let commentPath = NSBundle.mainBundle().pathForResource("_comment", ofType: "html")
+            let commentTemplate = try String(contentsOfFile: commentPath!)
+            for comment in (self.article?.comments)! {
+                commentsPartial = commentsPartial + commentTemplate.stringByReplacingOccurrencesOfString("[[ avatarSrc ]]", withString: String(comment.userAvatarURL!)).stringByReplacingOccurrencesOfString("[[ userName ]]", withString: comment.userName).stringByReplacingOccurrencesOfString("[[ timeText ]]", withString: comment.time.timeAgoString()).stringByReplacingOccurrencesOfString("[[ content ]]", withString: comment.content)
+            }
+
+            defaultArticle = defaultArticle.stringByReplacingOccurrencesOfString("[[ comments ]]", withString: commentsPartial)
+            
+            self.webView.loadHTMLString(defaultArticle, baseURL: NSURL.fileURLWithPath(NSBundle.mainBundle().bundlePath))
+        } catch let error {
+            print(error)
         }
-        let bodyComments = "<div class='comments'>\(commentsHtml)</div>"
-        
-        let html : String! = "\(headHtml) <body> \(bodyHeader) \(bodyArticle) \(bodyComments) </body>"
-        
-        self.webView.loadHTMLString(html, baseURL: NSURL.fileURLWithPath(NSBundle.mainBundle().bundlePath))
     }
 }

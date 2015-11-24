@@ -1,25 +1,18 @@
-/* 
-  article.css
-  HackerReader
-
-  Created by Zhang Yan on 15/11/21.
-  Copyright © 2015年 Yeah. All rights reserved.
-*/
-
 @charset "utf-8";
-/* CSS Document */
 html,body,p,span,a,strong,ul,li,input,textarea{margin:0;padding:0; border:none; font-weight:normal;}
+img {
+    max-width: 100%;
+}
 
 header {
-    background-color: #d99;
-    color: white;
-    padding: 10px;
-    margin: 0;
+    color: rgb(44, 44, 44);
+    text-align: center;
     min-height: 50px;
+    padding: 20px 20px;
 }
 
 header h1.title {
-    font-size: 16px;
+    font-size: 20px;
     margin: 0;
 }
 
@@ -29,7 +22,7 @@ header div.author:before {
 
 header div.author {
     font-size: 13px;
-    margin: 0;
+    margin-top: 10px;
 }
 
 article {
@@ -49,7 +42,7 @@ code {
 }
 
 .comments {
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
 }
 
