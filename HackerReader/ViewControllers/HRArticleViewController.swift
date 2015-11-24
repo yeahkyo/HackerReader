@@ -18,6 +18,8 @@ class HRArticleViewController: UIViewController {
             return HRWebArticleViewController()
         case .RubyChina:
             return HRDefaultArticleViewController()
+        case .MikeAsh:
+            return HRWebArticleViewController()
         }
     }
 }

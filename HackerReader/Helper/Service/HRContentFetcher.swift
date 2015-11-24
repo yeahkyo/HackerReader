@@ -12,32 +12,40 @@ import Alamofire
 enum HRSitesAvailable : Int {
     case HackerNews = 1
     case RubyChina = 2
+    case MikeAsh = 3
 }
+
+let HRSitesBaseURL = [HRSitesAvailable.HackerNews: "https://news.ycombinator.com/news",
+    .RubyChina: "https://ruby-china.org/topics",
+    .MikeAsh: "https://mikeash.com/pyblog"
+]
 
 class HRContentFetcher: NSObject {
 
-    func feedsForSite(site: HRSitesAvailable, success: (NSArray) -> Void) {
-        self.feedsForSite(site, page: 1, success: success)
+    func feedsForSite(site: HRSitesAvailable, success: (NSArray) -> Void, failure: () -> Void) {
+        self.feedsForSite(site, page: 1, success: success, failure: failure)
     }
     
-    func feedsForSite(site: HRSitesAvailable, page: Int, success: (NSArray) -> Void) {
-        var url : String
+    func feedsForSite(site: HRSitesAvailable, page: Int, success: (NSArray) -> Void, failure: () -> Void) {
+        var url = HRSitesBaseURL[site]!
         var parser : HRHTMLParser
         var pageParameter = ""
-        if site == .HackerNews {
-            url = "https://news.ycombinator.com/news"
+        switch site {
+        case .HackerNews:
             parser = HRHTMLParser.hackerNewsParser()
             pageParameter = "p"
-        } else if site == .RubyChina {
-            url = "https://ruby-china.org/topics"
+        case .RubyChina:
             parser = HRHTMLParser.rubyChinaParser()
             pageParameter = "page"
-        } else {
-            url = "about:blank"
-            parser = HRHTMLParser()
+        case .MikeAsh:
+             parser = HRHTMLMikeAshParser()
         }
         
         if page > 1 {
+            if pageParameter == "" {
+                failure()
+                return
+            }
             url = url + "?" + pageParameter + "=" + String(page)
         }
         
@@ -48,7 +56,14 @@ class HRContentFetcher: NSObject {
                     let html = String(data: validData, encoding: NSUTF8StringEncoding)!
                     let feedArray : NSArray = parser.parseForFeeds(html)
                     
-                    success(feedArray)
+                    if feedArray.count > 0 {
+                        success(feedArray)
+                    } else {
+                        failure()
+                    }
+                    
+                } else {
+                    failure()
                 }
             })
     }

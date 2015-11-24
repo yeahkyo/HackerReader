@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4738BADD1C04663900E6189C /* HRHTMLRubyChinaParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738BADC1C04663900E6189C /* HRHTMLRubyChinaParser.swift */; };
 		4738BADF1C04667100E6189C /* HRHTMLHackerNewsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738BADE1C04667100E6189C /* HRHTMLHackerNewsParser.swift */; };
+		4738BAE11C046A9B00E6189C /* HRHTMLMikeAshParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738BAE01C046A9B00E6189C /* HRHTMLMikeAshParser.swift */; };
 		47651CD11BFDAE5E00AAA91A /* HRHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD01BFDAE5E00AAA91A /* HRHTMLParser.swift */; };
 		47651CD31BFDAE7200AAA91A /* HRContentFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD21BFDAE7200AAA91A /* HRContentFetcher.swift */; };
 		47651CD61BFDB0DD00AAA91A /* HRFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */; };
@@ -33,6 +34,7 @@
 		2BC10C4903AB15D3D233EF4B /* Pods-HackerReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerReader/Pods-HackerReader.debug.xcconfig"; sourceTree = "<group>"; };
 		4738BADC1C04663900E6189C /* HRHTMLRubyChinaParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHTMLRubyChinaParser.swift; path = Helper/HTMLParser/HRHTMLRubyChinaParser.swift; sourceTree = "<group>"; };
 		4738BADE1C04667100E6189C /* HRHTMLHackerNewsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHTMLHackerNewsParser.swift; path = Helper/HTMLParser/HRHTMLHackerNewsParser.swift; sourceTree = "<group>"; };
+		4738BAE01C046A9B00E6189C /* HRHTMLMikeAshParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHTMLMikeAshParser.swift; path = Helper/HTMLParser/HRHTMLMikeAshParser.swift; sourceTree = "<group>"; };
 		47651CD01BFDAE5E00AAA91A /* HRHTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRHTMLParser.swift; path = Helper/HTMLParser/HRHTMLParser.swift; sourceTree = "<group>"; };
 		47651CD21BFDAE7200AAA91A /* HRContentFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRContentFetcher.swift; path = Helper/Service/HRContentFetcher.swift; sourceTree = "<group>"; };
 		47651CD51BFDB0DD00AAA91A /* HRFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRFeedModel.swift; path = Model/HRFeedModel.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				47651CD01BFDAE5E00AAA91A /* HRHTMLParser.swift */,
 				4738BADC1C04663900E6189C /* HRHTMLRubyChinaParser.swift */,
 				4738BADE1C04667100E6189C /* HRHTMLHackerNewsParser.swift */,
+				4738BAE01C046A9B00E6189C /* HRHTMLMikeAshParser.swift */,
 			);
 			name = HTMLParser;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				47A225FF1C0455950070713E /* HRDefaultArticleViewController.swift in Sources */,
 				47D8E5D81BFC813D00B41EA4 /* AppDelegate.swift in Sources */,
 				47651D0F1C0316EE00AAA91A /* HRCommentModel.swift in Sources */,
+				4738BAE11C046A9B00E6189C /* HRHTMLMikeAshParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import UIKit
 import Fuzi
 
 class HRHTMLRubyChinaParser: HRHTMLParser {
-    override func parseForFeeds(html: String) -> NSArray {
+    override func parseForFeeds(html: String) -> [HRFeedModel] {
         let array = NSMutableArray()
         do {
             let doc = try HTMLDocument(string: html)
@@ -29,7 +29,7 @@ class HRHTMLRubyChinaParser: HRHTMLParser {
             print(error)
         }
         
-        return array.copy() as! NSArray
+        return array.copy() as! [HRFeedModel]
     }
     
     override  func parseForArticle(html: String) -> HRArticleModel {

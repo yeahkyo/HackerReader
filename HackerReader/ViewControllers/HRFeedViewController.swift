@@ -34,6 +34,8 @@ class HRFeedViewController: UITableViewController {
             self.title = "HN"
         } else if feedSource == HRSitesAvailable.RubyChina {
             self.title = "RubyChina"
+        } else if feedSource == HRSitesAvailable.MikeAsh {
+            self.title = "MikeAsh"
         }
         
         self.articleViewController = HRArticleViewController.articleViewControllerFor(self.feedSource)
@@ -58,7 +60,7 @@ class HRFeedViewController: UITableViewController {
     private func loadData() {
         let fetcher : HRContentFetcher = HRContentFetcher()
         
-        fetcher.feedsForSite(feedSource) { [weak self](feedArray) -> Void in
+        fetcher.feedsForSite(feedSource, success: {[weak self] (feedArray) -> Void in
             if let wself = self {
                 wself.feedArray.removeAllObjects()
                 wself.feedArray.addObjectsFromArray(feedArray as [AnyObject])
@@ -68,14 +70,16 @@ class HRFeedViewController: UITableViewController {
                     self?.tableView.reloadData()
                 })
             }
-        }
+
+            }, failure: { ()->Void in
+        })
     }
     
     private func loadNextPage() {
         let fetcher : HRContentFetcher = HRContentFetcher()
         self.isLoading = true
         
-        fetcher.feedsForSite(feedSource, page: ++self.page) { [weak self](feedArray) -> Void in
+        fetcher.feedsForSite(feedSource, page: ++self.page, success: { [weak self](feedArray) -> Void in
             if let wself = self {
                 wself.feedArray.addObjectsFromArray(feedArray as [AnyObject])
                 wself.isLoading = false
@@ -84,7 +88,9 @@ class HRFeedViewController: UITableViewController {
                     self?.tableView.reloadData()
                 })
             }
-        }
+            }, failure:  { () -> Void in
+                
+        })
     }
 }
 

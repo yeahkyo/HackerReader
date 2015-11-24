@@ -26,7 +26,10 @@ class HRHomeViewController: UINavigationController {
         hackerNewsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .Bookmarks, tag: 0)
         let rubyChinaViewController = HRFeedViewController(feedSource: HRSitesAvailable.RubyChina)
         rubyChinaViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .History, tag: 1)
-        tabBarController.viewControllers = [hackerNewsViewController, rubyChinaViewController]
+        let mikeAshViewController = HRFeedViewController(feedSource: HRSitesAvailable.MikeAsh)
+        mikeAshViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .History, tag: 2)
+        
+        tabBarController.viewControllers = [hackerNewsViewController, rubyChinaViewController, mikeAshViewController]
         
         self.viewControllers = [tabBarController]
     }

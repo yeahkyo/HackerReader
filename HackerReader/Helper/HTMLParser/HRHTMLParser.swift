@@ -9,7 +9,9 @@
 import UIKit
 
 protocol HRHTMLParserProtocol {
-    func parseForFeeds(html: String) -> NSArray
+    func parseForFeeds(html: String) -> [HRFeedModel]
+    func parseForArticle(html: String) -> HRArticleModel 
+    func parseForComments(html: String) -> [HRCommentModel]
 }
 
 class HRHTMLParser: NSObject, HRHTMLParserProtocol {
@@ -22,7 +24,11 @@ class HRHTMLParser: NSObject, HRHTMLParserProtocol {
         return HRHTMLRubyChinaParser()
     }
     
-    func parseForFeeds(html: String) -> NSArray {
+    static func mikeAshParser() -> HRHTMLParser {
+        return HRHTMLMikeAshParser()
+    }
+    
+    func parseForFeeds(html: String) -> [HRFeedModel] {
         preconditionFailure("This method must be overridden")
     }
     
