@@ -21,7 +21,7 @@ extension NSDate {
         if yearsDiff > 0 {
             return "\(yearsDiff)年前"
         } else if monthDiff > 0 {
-            return "\(monthDiff)月前"
+            return "\(monthDiff)个月前"
         } else if daysDiff > 0 {
             return "\(daysDiff)天前"
         } else if hoursDiff > 0 {

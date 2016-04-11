@@ -224,7 +224,6 @@
 				TargetAttributes = {
 					47D8E5D31BFC813D00B41EA4 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = JUHB8C2VT8;
 					};
 				};
 			};
@@ -441,7 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yeah.engineer.HackerReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "bc0f9f35-7476-4d52-b913-5bf08ff27e7c";
 			};
 			name = Debug;
 		};
@@ -457,7 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yeah.engineer.HackerReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "bc0f9f35-7476-4d52-b913-5bf08ff27e7c";
 			};
 			name = Release;
 		};

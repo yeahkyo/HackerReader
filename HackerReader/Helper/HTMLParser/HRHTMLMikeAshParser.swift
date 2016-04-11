@@ -11,7 +11,7 @@ import Fuzi
 
 class HRHTMLMikeAshParser: HRHTMLParser {
     
-    override func parseForFeeds(html: String) -> [HRFeedModel] {
+    func parseForFeeds(html: String) -> [HRFeedModel] {
         let array = NSMutableArray()
         do {
             let doc = try HTMLDocument(string: html)
@@ -32,11 +32,12 @@ class HRHTMLMikeAshParser: HRHTMLParser {
         
         return array.copy() as! [HRFeedModel]
     }
-//
-//    func parseForArticle(html: String) -> HRArticleModel {
-//    }
-//    
-//    func parseForComments(html: String) -> [HRCommentModel] {
-//
-//    }
+
+    func parseForArticle(html: String) -> HRArticleModel {
+        return HRArticleModel()
+    }
+    
+    func parseForComments(html: String) -> [HRCommentModel] {
+        return []
+    }
 }

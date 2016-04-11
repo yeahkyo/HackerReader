@@ -32,13 +32,16 @@ class HRContentFetcher: NSObject {
         var pageParameter = ""
         switch site {
         case .HackerNews:
-            parser = HRHTMLParser.hackerNewsParser()
+//            parser = HRHTMLParser.hackerNewsParser()
+            parser = HRHTMLParserFactory.htmlParserFor(.HackerNews)
             pageParameter = "p"
         case .RubyChina:
-            parser = HRHTMLParser.rubyChinaParser()
+            parser = HRHTMLParserFactory.htmlParserFor(.RubyChina)
+//            parser = HRHTMLParser.rubyChinaParser()
             pageParameter = "page"
         case .MikeAsh:
-             parser = HRHTMLMikeAshParser()
+//             parser = HRHTMLMikeAshParser()
+            parser = HRHTMLParserFactory.htmlParserFor(.MikeAsh)
         }
         
         if page > 1 {
@@ -72,9 +75,11 @@ class HRContentFetcher: NSObject {
     func articleForSite(site: HRSitesAvailable, url: NSURL, success: (HRArticleModel) -> Void) {
         let parser : HRHTMLParser
         if site == .RubyChina {
-            parser = HRHTMLParser.rubyChinaParser()
+//            parser = HRHTMLParser.rubyChinaParser()
+            parser = HRHTMLParserFactory.htmlParserFor(.RubyChina)
         } else {
-            parser = HRHTMLParser()
+//            parser = HRHTMLParser()
+            parser = HRHTMLParserFactory.htmlParserFor(.HackerNews)
         }
         
         Alamofire.request(.GET, url)
